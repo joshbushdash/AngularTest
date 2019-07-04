@@ -6,9 +6,9 @@ import { map } from 'rxjs/operators';
 export class MediaItemService {
   constructor(private http: HttpClient) {}
 
-  get(medium) {
+  get(category) {
     let getOptions = {
-      params: { medium }
+      params: { category }
     };
     return this.http.get<MediaItemsResponse>('mediaitems', getOptions)
       .pipe(

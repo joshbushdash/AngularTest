@@ -9,21 +9,22 @@ import { MediaItemService } from './media-item.service';
 })
 export class MediaItemListComponent {
   medium = '';
+  category = '';
   mediaItems = [];
 
   constructor(private mediaItemService: MediaItemService) {}
 
   ngOnInit() {
-    this.getMediaItems(this.medium);
+    this.getMediaItems(this.category);
   }
 
   onMediaItemDelete(mediaItem) {
     this.mediaItemService.delete(mediaItem);
   }
 
-  getMediaItems(medium) {
-    this.medium = medium;
-    this.mediaItemService.get(medium)
+  getMediaItems(category) {
+    this.category = category;
+    this.mediaItemService.get(category)
       .subscribe(mediaItems => {
         this.mediaItems = mediaItems;
       });
