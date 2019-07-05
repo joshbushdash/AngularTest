@@ -23,7 +23,7 @@ export class MediaItemService {
   }
   
   delete(mediaItem) {
-    return this.http.delete('mediaitems/${mediaItem.id}');
+    return this.http.delete('mediaitems/' + mediaItem.id);
   }
 }
 
